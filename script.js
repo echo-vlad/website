@@ -8,5 +8,5 @@ noBtn.addEventListener("click", () => {
 });
 
 yesBtn.addEventListener("click", () => {
-  container.innerHTML = "<h1>I love you ❤️</h1>";
+  container.innerHTML = "<h1>Vlad loves you ❤️</h1>";
 });
