@@ -1,6 +1,8 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const message = document.getElementById("message");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
 
 noBtn.addEventListener("click", () => {
   message.textContent = "Raspuns gresit";
@@ -9,11 +11,9 @@ noBtn.addEventListener("click", () => {
 });
 
 yesBtn.addEventListener("click", () => {
-  // "pop up" message
-  alert("Scrie-i finului");
+  modal.classList.add("show");
+});
 
-  // also show it on the page (nice UX on mobile / if popups blocked)
-  message.textContent = "Scrie-i finului";
-  message.classList.remove("bad");
-  message.classList.add("ok");
+closeModal.addEventListener("click", () => {
+  modal.classList.remove("show");
 });
