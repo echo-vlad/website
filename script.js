@@ -11,6 +11,12 @@ noBtn.addEventListener("click", () => {
 });
 
 yesBtn.addEventListener("click", () => {
+
+  // Remove existing message if any
+  message.textContent = "";
+  message.classList.remove("bad", "ok");
+
+  // Show modal
   modal.classList.add("show");
 });
 
