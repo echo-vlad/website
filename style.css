@@ -9,7 +9,7 @@
 * { box-sizing: border-box; }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
@@ -90,14 +90,13 @@ button:hover {
 -------------------------- */
 
 .bg{
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
 }
 
-/* Each .beer is a "glass" built with CSS gradients + bubbles */
 .beer{
   position: absolute;
   width: 74px;
@@ -105,28 +104,23 @@ button:hover {
   border-radius: 14px 14px 18px 18px;
   opacity: 0.9;
 
-  /* glass outline */
   background:
-    /* foam top */
     radial-gradient(circle at 20% 10%, rgba(255,255,255,0.95) 0 10px, transparent 11px),
     radial-gradient(circle at 40% 12%, rgba(255,255,255,0.95) 0 12px, transparent 13px),
     radial-gradient(circle at 62% 10%, rgba(255,255,255,0.95) 0 10px, transparent 11px),
     radial-gradient(circle at 82% 12%, rgba(255,255,255,0.95) 0 12px, transparent 13px),
 
-    /* bubbles */
     radial-gradient(circle at 30% 55%, rgba(255,255,255,0.6) 0 4px, transparent 5px),
     radial-gradient(circle at 55% 70%, rgba(255,255,255,0.55) 0 3px, transparent 4px),
     radial-gradient(circle at 60% 45%, rgba(255,255,255,0.5) 0 3px, transparent 4px),
     radial-gradient(circle at 40% 80%, rgba(255,255,255,0.5) 0 2.5px, transparent 3.5px),
 
-    /* beer liquid */
     linear-gradient(to bottom,
       rgba(255,255,255,0.0) 0%,
       rgba(255,255,255,0.0) 18%,
       rgba(255,220,120,0.95) 19%,
       rgba(245,158,11,0.95) 100%);
 
-  /* glass border + inner shine */
   box-shadow:
     inset 0 0 0 3px rgba(255,255,255,0.55),
     inset 10px 0 18px rgba(255,255,255,0.18),
@@ -150,7 +144,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* handle on the right */
 .beer::before{
   content:"";
   position:absolute;
@@ -163,7 +156,6 @@ button:hover {
   background: rgba(255,255,255,0.10);
 }
 
-/* positions + sizes */
 .b1 { left: 8%;  top: 110%; transform: scale(0.85); animation-duration: 16s, 4.8s; animation-delay: 0s, 0s; }
 .b2 { left: 22%; top: 120%; transform: scale(0.65); animation-duration: 18s, 5.4s; animation-delay: 2s, 0.6s; opacity: 0.75; }
 .b3 { left: 45%; top: 115%; transform: scale(1.00); animation-duration: 15s, 4.1s; animation-delay: 1s, 0.2s; }
@@ -179,4 +171,63 @@ button:hover {
 @keyframes sway{
   0%,100% { rotate: -2deg; }
   50%     { rotate:  2deg; }
+}
+
+/* -------------------------
+   Modal
+-------------------------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: popIn 0.3s ease;
+}
+
+.modal-box p {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #7c2d12;
+}
+
+.modal-box button {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
