@@ -115,7 +115,7 @@ body{
     radial-gradient(circle, rgba(255,255,255,0.55) 0 2px, transparent 3px) 10px 20px / 70px 70px,
     radial-gradient(circle, rgba(255,255,255,0.45) 0 3px, transparent 4px) 40px 60px / 110px 110px,
     radial-gradient(circle, rgba(255,255,255,0.35) 0 1.5px, transparent 3px) 0 0 / 55px 55px;
-  animation: rise1 7s linear infinite;
+  animation: rise1 9s linear infinite;
 }
 
 .bubbles-2{
@@ -124,7 +124,7 @@ body{
     radial-gradient(circle, rgba(255,255,255,0.50) 0 2.5px, transparent 4px) 20px 10px / 90px 90px,
     radial-gradient(circle, rgba(255,255,255,0.35) 0 4px, transparent 6px) 60px 80px / 160px 160px,
     radial-gradient(circle, rgba(255,255,255,0.25) 0 2px, transparent 4px) 0 0 / 75px 75px;
-  animation: rise2 10s linear infinite;
+  animation: rise2 14s linear infinite;
 }
 
 .bubbles-3{
@@ -132,7 +132,7 @@ body{
   background:
     radial-gradient(circle, rgba(255,255,255,0.35) 0 5px, transparent 8px) 30px 40px / 220px 220px,
     radial-gradient(circle, rgba(255,255,255,0.22) 0 6px, transparent 10px) 120px 140px / 280px 280px;
-  animation: rise3 14s linear infinite;
+  animation: rise3 20s linear infinite;
 }
 
 @keyframes rise1{
